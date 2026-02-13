@@ -1,0 +1,88 @@
+:root {
+  --bg: #0a0a0a;
+  --panel: #121212;
+  --gold: #d4af37;
+  --gold-soft: #f4e6b0;
+  --text: #f5f5f5;
+  --muted: #a0a0a0;
+  --ok: #42d392;
+  --warn: #eab308;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top right, #1a1200 0%, var(--bg) 40%);
+  color: var(--text);
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.06), transparent 25%),
+    radial-gradient(circle at 80% 60%, rgba(212, 175, 55, 0.05), transparent 22%);
+}
+
+.hero, main {
+  width: min(1280px, calc(100% - 2rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hero { padding: 2.5rem 0 1rem; }
+.eyebrow { color: var(--gold-soft); letter-spacing: .18em; font-size: .72rem; }
+h1 { margin: .25rem 0; font-size: clamp(2rem, 5vw, 3.2rem); }
+.hero p { max-width: 900px; color: #ddd; }
+
+.panel {
+  background: linear-gradient(160deg, rgba(22, 22, 22, .95), rgba(12, 12, 12, .92));
+  border: 1px solid rgba(212, 175, 55, .25);
+  border-radius: 16px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  align-items: baseline;
+}
+h2 { margin: .2rem 0 .9rem; color: var(--gold-soft); }
+h3 { margin: .2rem 0 .6rem; font-size: .9rem; color: #f8eac0; }
+.muted, #last-refresh { color: var(--muted); font-size: .8rem; }
+
+.source-grid, .chart-grid, .feed-grid {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.source-card, .feed-item, .mini-chart-card, .chart-grid article {
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: .7rem;
+}
+.status { font-size: .75rem; font-weight: 700; }
+.status.ok { color: var(--ok); }
+.status.warn { color: var(--warn); }
+
+.source-link, .action-link {
+  color: var(--gold-soft);
+  text-decoration: none;
+  font-size: .84rem;
+  display: inline-block;
+  margin-top: .35rem;
+}
+
+.chart-grid article { min-height: 250px; }
+.mini-chart-grid {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.mini-chart-card canvas { height: 90px !important; }
+.mini-title { font-size: .82rem; color: #eee; display:flex; justify-content:space-between; gap:.4rem; }
+.mini-title small { color: var(--muted); }
+.note { color: var(--muted); font-size: .88rem; }

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Signal • 24/7 Crypto + Stocks Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="hero">
+    <p class="eyebrow">LIVE DESIGN • 24/7 UPDATE LOOP</p>
+    <h1>Golden Signal Market Intelligence</h1>
+    <p>
+      Live-first dashboard with >100 crypto analysis charts, stock feeds, macro DeFi data,
+      and influencer monitoring cards with one-click redirect routing.
+    </p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-heading">
+        <h2>Data Sources + Connector Health</h2>
+        <span id="last-refresh">Last refresh: pending</span>
+      </div>
+      <div class="source-grid" id="source-grid"></div>
+      <p class="note">
+        Auto refresh loop: every <strong>5 minutes</strong> for markets/charts and every <strong>3 minutes</strong> for influencer/news feeds.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <h2>Influencer Signal Router</h2>
+      </div>
+      <div class="feed-grid" id="influencer-feed"></div>
+      <p class="note">Click "Open on Golden Signal" to route through this site, then continue to the source post/video.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <h2>Macro + Cross-Market Live Charts</h2>
+      </div>
+      <div class="chart-grid">
+        <article><h3>Crypto Total Market Cap (B$)</h3><canvas id="cryptoMarketChart"></canvas></article>
+        <article><h3>Top Chain TVL (B$)</h3><canvas id="tvlChart"></canvas></article>
+        <article><h3>Stocks Snapshot (Price)</h3><canvas id="stockChart"></canvas></article>
+        <article><h3>Top Crypto 24h Change (%)</h3><canvas id="revenueChart"></canvas></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <h2>Crypto Analysis Grid (120 Live Mini Charts)</h2>
+        <span class="muted" id="crypto-count">loading…</span>
+      </div>
+      <div id="crypto-grid" class="mini-chart-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <h2>Stocks Analysis Grid (24 Live Mini Charts)</h2>
+        <span class="muted" id="stocks-count">loading…</span>
+      </div>
+      <div id="stocks-grid" class="mini-chart-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><h2>Live News Radar</h2></div>
+      <div class="feed-grid" id="news-feed"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
